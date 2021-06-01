@@ -63,6 +63,9 @@ type ServerOpts struct {
 
 	// A logger implementation, if nil the StdLogger is used
 	Logger Logger
+
+	// The TLS configuration to use. If nil, a default configuration is provided.
+	TLSConfig *tls.Config
 }
 
 // Server is the root of your FTP application. You should instantiate one
@@ -220,7 +223,12 @@ func (server *Server) ListenAndServe() error {
 	var err error
 
 	if server.ServerOpts.TLS {
-		server.tlsConfig, err = simpleTLSConfig(server.CertFile, server.KeyFile)
+		if server.ServerOpts.TLSConfig != nil {
+			server.tlsConfig = server.ServerOpts.TLSConfig
+		} else {
+			server.tlsConfig, err = simpleTLSConfig(server.CertFile, server.KeyFile)
+		}
+
 		if err != nil {
 			return err
 		}
