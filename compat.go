@@ -5,23 +5,23 @@
 //
 // New code should
 //
-//     import "goftp.io/server/core"
+//     import "github.com/marco/goftp-tlsconfig/core"
 //
 // And if the drivers are required use
 //
-//     import "goftp.io/server/driver/file"
-//     import "goftp.io/server/driver/minio"
+//     import "github.com/marco/goftp-tlsconfig/driver/file"
+//     import "github.com/marco/goftp-tlsconfig/driver/minio"
 package server
 
 import (
-	"goftp.io/server/core"
-	"goftp.io/server/driver/file"
-	"goftp.io/server/driver/minio"
+	"github.com/marco/goftp-tlsconfig/core"
+	"github.com/marco/goftp-tlsconfig/driver/file"
+	"github.com/marco/goftp-tlsconfig/driver/minio"
 )
 
 // Backwards compatible types for the server code.
 //
-// New code should import goftp.io/server/core
+// New code should import github.com/marco/goftp-tlsconfig/core
 type (
 	Auth                  = core.Auth
 	Command               = core.Command
@@ -46,7 +46,7 @@ type (
 
 // Backwards compatible functions and variables for the server code.
 //
-// New code should import goftp.io/server/core
+// New code should import github.com/marco/goftp-tlsconfig/core
 var (
 	ErrServerClosed = core.ErrServerClosed
 	NewServer       = core.NewServer
@@ -56,7 +56,7 @@ var (
 
 // Backwards compatible types for the file driver code.
 //
-// New code should import goftp.io/server/driver/file
+// New code should import github.com/marco/goftp-tlsconfig/driver/file
 type (
 	FileDriver        = file.Driver
 	FileDriverFactory = file.DriverFactory
@@ -64,7 +64,7 @@ type (
 
 // Backwards compatible types for the minio driver code.
 //
-// New code should import goftp.io/server/driver/minio
+// New code should import github.com/marco/goftp-tlsconfig/driver/minio
 type (
 	MinioDriver        = minio.Driver
 	MinioDriverFactory = minio.DriverFactory
@@ -72,5 +72,5 @@ type (
 
 // Backwards compatible functions for the minio driver code.
 //
-// New code should import goftp.io/server/driver/minio
+// New code should import github.com/marco/goftp-tlsconfig/driver/minio
 var NewMinioDriverFactory = minio.NewDriverFactory

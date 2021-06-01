@@ -1,4 +1,4 @@
-module goftp.io/server
+module github.com/marco/goftp-tlsconfig
 
 go 1.12
 

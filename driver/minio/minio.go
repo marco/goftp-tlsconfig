@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/marco/goftp-tlsconfig/core"
 	minio "github.com/minio/minio-go/v6"
-	"goftp.io/server/core"
 )
 
 var (

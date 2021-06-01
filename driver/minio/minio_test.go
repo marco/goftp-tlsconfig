@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/jlaffaye/ftp"
+	"github.com/marco/goftp-tlsconfig/core"
 	"github.com/stretchr/testify/assert"
-	"goftp.io/server/core"
 )
 
 func runServer(t *testing.T, opt *core.ServerOpts, notifiers []core.Notifier, execute func()) {
